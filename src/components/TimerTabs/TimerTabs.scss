@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+.panel {
+    width: 373px;
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+    background: $darkest-blue;
+    border-radius: 100px;
+    padding: 0px 8px;
+    margin-bottom: 45px;
+    z-index: 100;
+    button {
+        transition: 0.3s;
+        background-color: transparent;
+        color: $gray;
+        opacity: 0.4;
+        &.active {
+            opacity: 1;
+            color: $dark-blue;
+            &.peach {
+                background-color: $peach;
+            }
+            &.cyan {
+                background-color: $cyan;
+            }
+            &.purple {
+                background-color: $purple;
+            }
+        }
+        &:hover {
+            opacity: 1;
+        }
+        font-family: inherit;
+        display: block;
+        width: 100%;
+        border-radius: 100px;
+        margin: 8px 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .panel {
+        width: 327px;
+        height: 63px;
+    }
+}

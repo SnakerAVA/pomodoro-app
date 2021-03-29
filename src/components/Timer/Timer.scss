@@ -1,0 +1,95 @@
+@import "../../styles/variables.scss";
+
+.timer-out-circle {
+    height: 410px;
+    width: 410px;
+    box-shadow: 40px 40px 50px rgba($color: #0e112a, $alpha: 0.6), -40px -40px 50px rgba($color: #2e325a, $alpha: 0.6),
+        40px 40px 50px rgba($color: #0e112a, $alpha: 0.6) inset,
+        -40px -40px 50px rgba($color: #2e325a, $alpha: 0.6) inset;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 63px;
+    .timer-in-circle {
+        position: relative;
+        height: 366px;
+        width: 366px;
+        background-color: $darkest-blue;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        .svg-container {
+            position: absolute;
+            height: 360px;
+            width: 360px;
+            transform: rotate(-90deg);
+            pointer-events: none;
+            .progress {
+                &.peach {
+                    stroke: $peach;
+                }
+                &.cyan {
+                    stroke: $cyan;
+                }
+                &.purple {
+                    stroke: $purple;
+                }
+                transition: 1s linear;
+                width: 100%;
+                height: 100%;
+                fill: none;
+                stroke-width: 11;
+                stroke-linecap: round;
+                stroke-dasharray: 1060 10000;
+            }
+        }
+        .timer-time {
+            padding-right: 5px;
+            color: $gray;
+        }
+        .timer-button {
+            color: $gray;
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform:translateX(-46%);
+            background: transparent;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                &.peach {
+                    color: $peach;
+                }
+                &.cyan {
+                    color: $cyan;
+                }
+                &.purple {
+                    color: $purple;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .timer-out-circle {
+        height: 300px;
+        width: 300px;
+        margin-bottom: 63px;
+        .timer-in-circle {
+            height: 268px;
+            width: 268px;
+            .svg-container {
+                .progress {
+                    r: 122px;
+                }
+            }
+            .timer-button {
+                bottom: 65px;
+            }
+        }
+    }
+    
+}

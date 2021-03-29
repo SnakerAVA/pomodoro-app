@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+@import "../../styles/global.scss";
+
+body,
+html,
+#root {
+    position: relative;
+    height: 99%;
+    background-color: $dark-blue;
+}
+
+#root,
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    flex-direction: column;
+    &.font-sans {
+        font-family: Kumbh Sans;
+    }
+    &.font-slab {
+        font-family: Roboto Slab;
+    }
+    &.font-mono {
+        font-family: Space Mono;
+    }
+}
+
+.settings-btn {
+    width: 27px;
+    height: 27px;
+    background-color: $peach;
+    background-image: url(../../images/icon-settings.svg);
+    background-color: transparent;
+}
+
+.modal {
+    z-index: 500;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+}
